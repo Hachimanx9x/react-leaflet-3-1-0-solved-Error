@@ -70,20 +70,6 @@
     "type": "git",
     "url": "git+https://github.com/PaulLeCam/react-leaflet.git"
   },
-  "scripts": {
-    "build": "yarn run build:clean && yarn run build:cjs && yarn run build:esm && yarn run build:types && yarn run build:umd && yarn run build:umd:min",
-    "build:cjs": "babel src --out-dir cjs --extensions .ts,.tsx",
-    "build:clean": "del cjs esm types umd",
-    "build:esm": "cross-env BABEL_ENV=esm babel src --out-dir esm --extensions .ts,.tsx",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:umd": "cross-env BABEL_ENV=rollup NODE_ENV=development rollup -c",
-    "build:umd:min": "cross-env BABEL_ENV=rollup NODE_ENV=production rollup -c",
-    "prepare": "yarn run build",
-    "start": "yarn run test && yarn run build",
-    "test": "yarn run test:types && yarn run test:unit",
-    "test:types": "tsc --noEmit",
-    "test:unit": "cross-env BABEL_ENV=development NODE_ENV=test jest"
-  },
   "sideEffects": false,
   "types": "types/index.d.ts",
   "version": "3.1.0"
